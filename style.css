@@ -27,6 +27,10 @@
     width: 3rem;
 }
 
+.color:hover {
+    transform: scale(1.1);
+}
+
 .red {
     background-color: red;
 }
@@ -122,6 +126,10 @@
 }
 
 .modal-color {
-    height: 3rem;
+    height: 2rem;
     width: 5rem;
+}
+
+.modal-color:hover {
+    transform: scale(1.1);
 }
