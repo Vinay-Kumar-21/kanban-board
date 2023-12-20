@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.toolBox-cont {
+    background-color: black;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.toolBox-priority-cont {
+    background-color: white;
+    width: 20rem;
+    height: 2.5rem;
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.color {
+    height: 1.25rem;
+    width: 3rem;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.blue {
+    background-color: skyblue;
+}
+
+.act-btn-cont {
+    background-color: white;
+    width: 10rem;
+    height: 2.5rem;
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.add-btn {
+    font-size: 1.35rem;
+}
+
+.remove-btn {
+    font-size: 1.25rem;
+}
+
+.main-cont {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem 0rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.ticket-cont {
+    background-color: yellow;
+    height: 10rem;
+    width: 15rem;
+}
+
+.ticket-color {
+    background-color: red;
+    height: 1rem;
+}
+
+.ticket-id {
+    font-size: 1rem;
+    background-color: gray;
+}
+
+.ticket-area {
+    height: calc(10rem -1rem -1rem);
+}
+
+.modal-cont {
+    height: 50vh;
+    width: 50vw;
+    background-color: burlywood;
+    display: none;
+    position: fixed;
+    left: 25vw;
+    top: 25vh;
+    border: 1px solid black;
+}
+
+.modal-text-cont {
+    height: 100%;
+    width: 75%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 1.75rem;
+    padding: 2rem;
+    border-right: 2px solid black;
+}
+
+.modal-color-cont {
+    height: 100%;
+    width: 25%;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.modal-color {
+    height: 3rem;
+    width: 5rem;
+}
