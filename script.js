@@ -6,6 +6,11 @@ let mainContainer = document.querySelector(".main-cont");//select container
 let addModal = true;
 let delBtnClicked = false;
 
+var uid = new ShortUniqueId();//generate UID
+
+
+
+
 addBtn.addEventListener('click', function () {
     if (addModal) {
         modalCont.style.display = 'flex'
@@ -30,7 +35,7 @@ textArea.addEventListener('keydown', function (e) {
     let key = e.key;
     if (key == "Enter") {
         //generate ticket
-        createTicket();
+        createTicket(textArea.value);
         modalCont.style.display = 'none'
 
         //empty txt area value
@@ -39,10 +44,12 @@ textArea.addEventListener('keydown', function (e) {
     }
 })
 
-function createTicket() {
+function createTicket(task) {
     let tickCont = document.createElement("div");
     tickCont.className = "ticket-cont";
-    tickCont.innerHTML = '<div class="ticket-color"></div> <div class="ticket-id">#rtyhj</div> <div class="ticket-area">Some task</div>';
+    tickCont.innerHTML = `<div class="ticket-color"></div> 
+                            <div class="ticket-id">#${uid.rnd()}</div> 
+                            <div class="ticket-area"> ${task}</div>`;
     mainContainer.appendChild(tickCont);
 
     tickCont.addEventListener('click', function () {
