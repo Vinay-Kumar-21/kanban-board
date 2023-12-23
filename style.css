@@ -22,12 +22,12 @@
     justify-content: space-evenly;
 }
 
-.color {
+.toolBox-color {
     height: 1.25rem;
     width: 3rem;
 }
 
-.color:hover {
+.toolBox-color:hover {
     transform: scale(1.1);
 }
 
@@ -74,23 +74,22 @@
 }
 
 .ticket-cont {
-    background-color: yellow;
+    background-color: #F8F0E5;
     height: 10rem;
     width: 15rem;
     position: relative;
 }
 
 .ticket-color {
-    background-color: red;
     height: 1rem;
 }
 
 .ticket-id {
-    font-size: 1rem;
-    background-color: gray;
+    font-size: 0.85rem;
 }
 
 .ticket-area {
+    font-size: 1.25rem;
     height: calc(10rem -1rem -1rem);
 }
 
@@ -136,7 +135,7 @@
 }
 
 .active {
-    border: 4px solid yellow;
+    border: 4px solid #F0DE36;
 }
 
 .lock-unlock-btn {

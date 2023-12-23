@@ -10,6 +10,30 @@ let delBtnClicked = false;
 var uid = new ShortUniqueId();//generate UID
 
 
+let allModalColor = document.querySelectorAll(".modal-color");
+let priorityColor = 'red';
+
+
+for (let i = 0; i < allModalColor.length; i++) {
+    allModalColor[i].addEventListener('click', function () {
+        //console.log(allModalColor[i].classList[1]);
+
+        for (let j = 0; j < allModalColor.length; j++) {
+            allModalColor[j].classList.remove('active');
+        }
+
+        allModalColor[i].classList.add('active');
+
+        //update priority color
+        priorityColor = allModalColor[i].classList[1];
+        createTicket(textArea.value);
+        modalCont.style.display = 'none'
+
+        //empty txt area value
+        textArea.value = "";
+    })
+}
+
 
 
 addBtn.addEventListener('click', function () {
@@ -48,7 +72,7 @@ textArea.addEventListener('keydown', function (e) {
 function createTicket(task) {
     let tickCont = document.createElement("div");
     tickCont.className = "ticket-cont";
-    tickCont.innerHTML = `<div class="ticket-color"></div> 
+    tickCont.innerHTML = `<div class="ticket-color ${priorityColor}"></div> 
                             <div class="ticket-id">#${uid.rnd()}</div> 
                             <div class="ticket-area"> ${task}</div>
                             <div class="lock-unlock-btn"><i class="fa-solid fa-lock"></i></div>`;
