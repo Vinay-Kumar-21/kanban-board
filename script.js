@@ -14,6 +14,8 @@ let allModalColor = document.querySelectorAll(".modal-color");
 let priorityColor = 'red';
 
 
+let color = ["red", "blue", "gray", "green"];
+
 for (let i = 0; i < allModalColor.length; i++) {
     allModalColor[i].addEventListener('click', function () {
         //console.log(allModalColor[i].classList[1]);
@@ -45,6 +47,8 @@ addBtn.addEventListener('click', function () {
     }
     addModal = !addModal;
 })
+
+
 delBtn.addEventListener('click', function () {
     if (!delBtnClicked) {
         delBtn.style.color = 'red';
@@ -103,4 +107,21 @@ function createTicket(task) {
             tickArea.setAttribute('contenteditable', 'false');
         }
     })
+
+    //cyclic method of ticket colors
+    let ticketColor = tickCont.querySelector(".ticket-color");
+    ticketColor.addEventListener('click', function () {
+        let currColor = ticketColor.classList[1];
+        let idx = color.findIndex(function (col) {
+            return col == currColor;
+        })
+
+        let nextIdx = (idx + 1) % color.length;
+        let nxtColor = color[nextIdx];
+
+        ticketColor.classList.remove(currColor);
+        ticketColor.classList.add(nxtColor);
+    })
+
 }
+
