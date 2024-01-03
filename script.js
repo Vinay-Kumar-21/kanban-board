@@ -28,6 +28,34 @@ if (localStorage.getItem('TaskArr')) {
     }
 }
 
+
+//filter of ticket
+let filterColor = document.querySelectorAll('.toolBox-color');
+for (let i = 0; i < filterColor.length; i++) {
+    filterColor[i].addEventListener('click', function () {
+        let allTicketsColor = document.querySelectorAll('.ticket-color');
+        // console.log(filterColor[i]);
+        let filterSelectdColor = filterColor[i].classList[1];
+        for (let j = 0; j < allTicketsColor.length; j++) {
+            // console.log(allTicketsColor[j]);
+            let currentTicketColor = allTicketsColor[j].classList[1];
+            // console.log(currentTicketColor);
+            if (filterSelectdColor == currentTicketColor) {
+                allTicketsColor[j].parentElement.style.display = 'block' // show it
+            } else {
+                allTicketsColor[j].parentElement.style.display = 'none' // hide it
+            }
+        }
+    })
+
+    filterColor[i].addEventListener('dblclick', function () {
+        let allTicketsColor = document.querySelectorAll('.ticket-color');
+        for (let j = 0; j < allTicketsColor.length; j++) {
+            allTicketsColor[j].parentElement.style.display = 'block' // show it
+        }
+    })
+}
+
 for (let i = 0; i < allModalColor.length; i++) {
     allModalColor[i].addEventListener('click', function () {
         //console.log(allModalColor[i].classList[1]);
