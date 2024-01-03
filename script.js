@@ -188,7 +188,7 @@ function createTicket(task, priorityColor, ticketId) {
         let ticketIndex = ticketArr.findIndex(function (ticketObj) {
             return ticketObj.id == id;
         })
-        ticketArr[ticketIndex].color = nextColor;
+        ticketArr[ticketIndex].color = nxtColor;
         updateLocalStorage();
     })
 }
