@@ -105,8 +105,8 @@ function createTicket(task, priorityColor, ticketId) {
         // we can say it is created with UI and not from the localStorage.
         ticketArr.push({ id: id, color: priorityColor, value: task });
         // console.log(ticketArr);
-        let ticketArrStr = JSON.stringify(ticketArr);
-        localStorage.setItem("TaskArr", ticketArrStr);
+
+        updateLocalStorage();
     }
 
     mainContainer.appendChild(tickCont);
@@ -114,6 +114,12 @@ function createTicket(task, priorityColor, ticketId) {
     tickCont.addEventListener('click', function () {
         if (delBtnClicked) {
             tickCont.remove();
+            let ticketIndex = ticketArr.findIndex(function (ticketObj) {
+                return ticketObj.id = id;
+            })
+            ticketArr.splice(ticketIndex, 1);
+            updateLocalStorage();
+            console.log(ticketArr);
         }
 
     })
@@ -150,7 +156,17 @@ function createTicket(task, priorityColor, ticketId) {
 
         ticketColor.classList.remove(currColor);
         ticketColor.classList.add(nxtColor);
-    })
 
+        let ticketIndex = ticketArr.findIndex(function (ticketObj) {
+            return ticketObj.id == id;
+        })
+        ticketArr[ticketIndex].color = nextColor;
+        updateLocalStorage();
+    })
+}
+
+function updateLocalStorage() {
+    let ticketArrStr = JSON.stringify(ticketArr);
+    localStorage.setItem("TaskArr", ticketArrStr);
 }
 
